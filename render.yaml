@@ -1,0 +1,19 @@
+databases:
+  - name: mysitedb
+    plan: free
+    databaseName: bookproject
+    user: yumineko
+services:
+  - type: web
+    plan: free
+    name: bookpro
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UnicornWorker"
+    envVars:
+      - key: DATAVASE_URL
+        fromDatabase:
+          name: mysitedb
+          property: connectionString
+      - key: WEB_CONCURRENCY
+        value: 4
