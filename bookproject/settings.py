@@ -75,8 +75,7 @@ DATABASES = {
 if not DEBUG:
   DATABASES = {
     'default': dj_database_url.config(
-      #replace this value with your local database's connection string.
-      default='postgresql://postgres:postgres@localhost:5432/bookproject',
+      default='postgresql://yumineko:g7P3T2l2CXSQmaZGL3WRL0ss0mPW4yJW@dpg-d4sdah3e5dus73aiqio0-a/bookproject_o8es',
       conn_max_age=600
     )
   }
