@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-io60kty06_4#bwyi2b8k-^*iz&cyd6nqf!*ijj@@hx^zy*=q9b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -73,8 +73,8 @@ DATABASES = {
 
 if not DEBUG:
   DATABASES = {
-    'default': dj_database_url_config(
-      #置き換え
+    'default': dj_database_url.config(
+      #replace this value with your local database's connection string.
       default='postgresql://postgres:postgres@localhost:5432/bookproject',
       conn_max_age=600
     )
