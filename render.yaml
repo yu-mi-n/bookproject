@@ -9,7 +9,7 @@ services:
     name: bookpro
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UnicornWorker"
+    startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATAVASE_URL
         fromDatabase:
